@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ToDo App</title>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+		
+	</head>
+	<body>
+
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-md-12" >
+					<h2> Your today's list </h2>
+
+					<table class="table table-border">
+						<tbody>
+							<thead>
+								<tr>
+									<th>
+										Text
+									</th>
+									<th>Date</th>
+									<th>Edit</th>
+								</tr>
+							</thead>
+							{% for todo in todo_list %}
+							<tr>
+								<td>	
+									{{ todo.text }}	
+								</td>
+								<td>{{ todo.date}}</td>
+							<td>
+								<a class="btn btn-warning btn-sm" href="{% url 'todo:edit' todo.id%}">Edit</a> 		
+							</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+				</div>
+			</div>
+			<footer>
+				<div class="row pad">
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	</body>
+
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</html>
